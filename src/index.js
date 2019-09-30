@@ -95,9 +95,9 @@ function set() {
   score[turn] += this.identifier;
   if (win(this)) {
     if (turn == "X") {
-      alert("Player 1 won");
+      alert("Player 1 won!");
     } else {
-      alert("Player 2 won");
+      alert("Player 2 won!");
     }
   } else if (moves === N_SIZE * N_SIZE) {
     alert("Draw");
