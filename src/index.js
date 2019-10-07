@@ -21,15 +21,12 @@ function init() {
     board.appendChild(row);
     for (var j = 0; j < N_SIZE; j++) {
       var cell = document.createElement("td");
-      cell.setAttribute("height", 120);
-      cell.setAttribute("width", 120);
-      cell.setAttribute("align", "center");
-      cell.setAttribute("valign", "center");
+
       cell.classList.add("col" + j, "row" + i);
-      if (i == j) {
+      if (i === j) {
         cell.classList.add("diagonal0");
       }
-      if (j == N_SIZE - i - 1) {
+      if (j === N_SIZE - i - 1) {
         cell.classList.add("diagonal1");
       }
       cell.identifier = identifier;
@@ -69,7 +66,7 @@ function win(clicked) {
     var testClass = "." + memberOf[i];
     var items = contains("#board " + testClass, turn);
     // winning condition: turn == N_SIZE
-    if (items.length == N_SIZE) {
+    if (items.length === N_SIZE) {
       return true;
     }
   }
@@ -87,6 +84,20 @@ function contains(selector, text) {
  * Sets clicked square and also updates the turn.
  */
 function set() {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 100);
+
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      return true;
+    } else {
+      width++;
+      elem.style.width = width + "%";
+    }
+  }
+
   if (this.innerHTML !== EMPTY) {
     return;
   }
@@ -94,16 +105,17 @@ function set() {
   moves += 1;
   score[turn] += this.identifier;
   if (win(this)) {
-    if (turn == "X") {
-      alert("Player 1 won!");
+    if (turn === "X") {
+      alert("Player 1 won");
     } else {
-      alert("Player 2 won!");
+      alert("Player 2 won");
     }
   } else if (moves === N_SIZE * N_SIZE) {
     alert("Draw");
   } else {
     turn = turn === "X" ? "O" : "X";
-    if (turn == "X") {
+
+    if (turn === "X") {
       document.getElementById("turn").textContent = "Player 1";
     } else {
       document.getElementById("turn").textContent = "Player 2";

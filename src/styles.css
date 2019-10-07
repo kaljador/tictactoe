@@ -1,3 +1,30 @@
 body {
-  font-family: sans-serif;
+  font-family: Arial;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td {
+  font-family: Helvetica;
+  height: 60px;
+  width: 60px;
+  font-size: 30px;
+  vertical-align: center;
+  text-align: center;
+}
+td[turn="X"] {
+  color: #7cfc00;
+}
+
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
 }
