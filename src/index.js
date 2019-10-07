@@ -85,13 +85,16 @@ function contains(selector, text) {
  */
 function set() {
   var elem = document.getElementById("myBar");
-  var width = 1;
-  var id = setInterval(frame, 100);
+  var width = 0;
+
+  var turntesti = turn;
 
   function frame() {
     if (width >= 100) {
+      turn = turn === "X" ? "O" : "X";
       clearInterval(id);
-      return true;
+    } else if (turn === turntesti) {
+      clearInterval(id);
     } else {
       width++;
       elem.style.width = width + "%";
@@ -114,7 +117,7 @@ function set() {
     alert("Draw");
   } else {
     turn = turn === "X" ? "O" : "X";
-
+    var id = setInterval(frame, 100);
     if (turn === "X") {
       document.getElementById("turn").textContent = "Player 1";
     } else {
