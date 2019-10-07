@@ -14,8 +14,11 @@ td {
   vertical-align: center;
   text-align: center;
 }
-td[turn="X"] {
-  color: #7cfc00;
+.X {
+  background-color: #7cfc00;
+}
+.O {
+  background-color: #fa8072;
 }
 
 #myProgress {
