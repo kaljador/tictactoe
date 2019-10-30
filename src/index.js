@@ -104,7 +104,8 @@ function set() {
   if (this.innerHTML !== EMPTY) {
     return;
   }
-  this.innerHTML = "<span class=" + turn + ">" + turn+"</span>";
+  this.innerHTML = "<span class=" + turn + ">" + turn + "</span>";
+
   moves += 1;
   score[turn] += this.identifier;
   if (win(this)) {
