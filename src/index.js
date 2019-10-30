@@ -11,17 +11,16 @@ var N_SIZE = 5,
  * Initializes the Tic Tac Toe board and starts the game.
  */
 function init() {
-  var board = document.createElement("table");
-  board.setAttribute("border", 1);
-  board.setAttribute("cellspacing", 0);
+  var board = document.createElement("div");
 
   var identifier = 1;
   for (var i = 0; i < N_SIZE; i++) {
-    var row = document.createElement("tr");
+    var row = document.createElement("div", "class=row");
     board.appendChild(row);
+    row.classList.add("row");
     for (var j = 0; j < N_SIZE; j++) {
-      var cell = document.createElement("td");
-
+      var cell = document.createElement("div");
+      cell.classList.add("col", "s1");
       cell.classList.add("col" + j, "row" + i);
       if (i === j) {
         cell.classList.add("diagonal0");
