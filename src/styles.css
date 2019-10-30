@@ -1,3 +1,60 @@
 body {
-  font-family: sans-serif;
+  font-family: Arial;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td {
+  font-family: Helvetica;
+  height: 60px;
+  width: 60px;
+  font-size: 30px;
+  vertical-align: center;
+  text-align: center;
+}
+td[class*="X"] {
+  background-color: #7cfc00;
+}
+.X {
+  background-color: #7cfc00;
+}
+.O {
+  background-color: #fa8072;
+}
+#myProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+
+.dark-primary-color {
+  background: #512da8;
+}
+.default-primary-color {
+  background: #673ab7;
+}
+.light-primary-color {
+  background: #d1c4e9;
+}
+.text-primary-color {
+  color: #ffffff;
+}
+.accent-color {
+  background: #795548;
+}
+.primary-text-color {
+  color: #212121;
+}
+.secondary-text-color {
+  color: #757575;
+}
+.divider-color {
+  border-color: #bdbdbd;
 }
